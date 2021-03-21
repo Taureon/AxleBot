@@ -7,8 +7,7 @@ module.exports = {
     async execute(message, args) {
         if (args[1] == "create") {
             let qrText = message.content.slice('11');
-            let search = qrText.replace(/\s/g, "%20")
-            return message.channel.send(`http://api.qrserver.com/v1/create-qr-code/?data=${search}&size=100x100`)
+            return message.channel.send(`http://api.qrserver.com/v1/create-qr-code/?data=${encodeURI(search)}&size=100x100`)
         }
         if (args[1] == "read") {
             if (!message.attachments.size > 0) {
