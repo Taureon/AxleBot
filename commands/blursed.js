@@ -27,8 +27,6 @@ module.exports = {
         //});
 
         //after several levels of optimisation
-        message.channel.send({
-            files: [`.images/Memes/Blursed/Blursed${Math.floor(Math.random()*50)}.jpg`]
-        });
+        message.channel.send({files: [`.images/Memes/Blursed/Blursed${Math.floor(Math.random()*50)}.jpg`]});
     }
 }
