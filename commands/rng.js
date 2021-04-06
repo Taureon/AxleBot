@@ -1,4 +1,5 @@
-const Discord = require('discord.js');
+//not required
+//const Discord = require('discord.js');
 
 module.exports = {
     name: "rng",
@@ -7,9 +8,14 @@ module.exports = {
 
         let max = parseInt(args[1]);
 
-        let check = Number.isInteger(max);
-
-        if(check === false){
+        //let check = Number.isInteger(max);
+        //
+        //if(check === false){
+        //    message.channel.send("Please specify a valid number!");
+        //    return;
+        //};
+        
+        if(Number.isInteger(max)){
             message.channel.send("Please specify a valid number!");
             return;
         };
@@ -19,13 +25,16 @@ module.exports = {
             return;
         }
 
-        let choices = Array.from(Array(max).keys());
-        let response = choices[Math.floor(Math.random() * choices.length)];
+        //i cannot understand why this was done this way
+        //let choices = Array.from(Array(max).keys());
+        //let response = choices[Math.floor(Math.random() * choices.length)];
+        
+        let response = Math.ceil(Math.random() * --max);
 
-        if(response == "0"){
-            message.channel.send("1");
-            return;
-        };
+        //if(response == "0"){
+        //    message.channel.send("1");
+        //    return;
+        //};
 
         message.channel.send(response);
     }
