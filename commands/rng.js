@@ -29,13 +29,15 @@ module.exports = {
         //let choices = Array.from(Array(max).keys());
         //let response = choices[Math.floor(Math.random() * choices.length)];
         
-        let response = Math.ceil(Math.random() * --max);
+        //let response = Math.ceil(Math.random() * --max);
 
         //if(response == "0"){
         //    message.channel.send("1");
         //    return;
         //};
 
-        message.channel.send(response);
+        //message.channel.send(response);
+
+        message.channel.send(Math.ceil(Math.random() * --max));
     }
 }
